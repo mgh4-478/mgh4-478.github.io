@@ -1,94 +1,157 @@
-<!DOCTYPE HTML>
-<!--
-	Directive by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>MGH4 | What&#39;s Hashing?</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-	</head>
-	<body class="is-preload">
+<!DOCTYPE html>
+<html lang="en">
 
-		<!-- Header -->
-			<div id="header">
-				<img src="images/logo.png"/>
-				<h1>MGH4 - Middle Georgia Hash</h1>
-				<p>
-					<h2>Next Hash W3H3 &amp; MGH4</h2>
-				</p>
-				<p><strong>W3H3 Wednesday, September 4,2024</strong> walking trail. 1006 Magnolia St. Macon. GA 6:30/7. Rain or shine.</p>
-				<p><strong>MGH4, Saturday, ? Check back</strong></p>
-			</div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Responsive Product Grid</title>
 
-		<!-- Main -->
-			<div id="main">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Barcode+39&display=swap" rel="stylesheet">
 
-				<div class="box alt container">
-					<section class="feature left">
-						<a href="#" class="image icon solid fa-book-open"><img src="images/pic01.jpg" alt="" /></a>
-						<div class="content">
-							<h3>What&lsquo;s Hashing?</h3>
-							<p>
-								The hash has been described as a "Drinking Club with a Running Problem." The Hashers meet and run/jog/walk a short trail. Then afterwards, they stand or sit around, chatting, drinking beer, soft drinks, water, or whatever they prefer.
-							</p>
-						</div>
-					</section>
-					<section class="feature right">
-						<a href="#" class="image icon solid fa-tshirt"><img src="images/pic02.jpg" alt="" /></a>
-						<div class="content">
-							<h3>What to bring and wear</h3>
-							<p>
-								- Wear comfortable clothes and shoes that you don't mind getting dirty, torn, and wet<br/>
-								- A complete change of clothes, including shoes<br/>
-								- A flashlight in case of a night run<br/>
-								- A hash bag for your belongings<br/>
-								- A collapsible chair for the end of the trail
-							</p>
-						</div>
-					</section>
-					<section class="feature left">
-						<a href="#" class="image icon solid fa-smile-beam"><img src="images/pic03.jpg" alt="" /></a>
-						<div class="content">
-							<h3>What to expect</h3>
-							<p>
-								The first and most important thing to know is that a hash is not a race. The only goal of the hash is to get to the end. After everyone has gathered at the start, one or more hashers (the hares) sets a trail for the rest of the hashers (the hounds) to follow. The trail can go through any type of terrain: on dirt roads, down power lines, through swamps, along streets and back alleyways, through shopping center parking lots, over fences, down streams, and through tunnels. Some may be as easy as a walk in the park.
-							</p>
-						</div>
-					</section>
-				</div>
+    <style>
+        /* General Layout */
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
 
-				<header class="major container medium">
-					<h2>Proudly contributing to the decline of civilization in Middle Georgia!</h2>
-					<p>
-						The Middle Georgia Hash House Harriers & Harriettes (MGH4) and the Wednesday, Wednesday, Wednesday Hash House Harriers (W3H3) are your local branches of the world-wide "DRINKING CLUB WITH A RUNNING PROBLEM."
-					</p>
-					<p>
-						Anyone who wants to have some fun, drink some beer, and get a bit of exercise, can put on his or her running shoes and meet us for the next trail. There is no formal membership, and we encourage new people to come out and join us.
-					</p>
-					<p>
-						We normally run every other week on Saturday around 2 PM and most Wednesdays at 6:30 PM. Afterwards, we often meet for dinner at a local restaurant.
-					</p>
-					<p>
-						Virgins (First time hashers) pay $5.00 for their first hash, but then the second hash with that same club is free. Thereafter the price is a measly $5.00 for all the beer (or soft drinks/water) snacks and general camaraderie you can stand. (Please drink responsibly.)
-					</p>
-					<p>
-						All it takes to be a hasher is a good sense of humor, and an interest in the outdoors. You definitely do not need to be a great runner.
-					</p>
-					<p>
-						Sound like fun? Want to know more? Check out the "What&lsquo;s Hashing?" and "What To Bring?" sections below. Then when you've made up your mind to come, grab your stuff and meet us at the start. Sometimes the trial info isn't posted until the day before the hash, so please check often.
-					</p>
-				</header>
-			</div>
+        .product-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-	</body>
+        /* Card Styling (UPDATED SIZING) */
+        .product-card {
+            /* NEW SIZING */
+            min-width: 200px;
+            /* Minimum width of the card */
+            max-width: 300px;
+            /* Maximum width of the card */
+            flex: 1 1 200px;
+            /* Allows cards to grow/shrink between min/max */
+
+            /* Enforce minimum height to prevent size differences due to short names */
+            min-height: 100px;
+
+            display: flex;
+            flex-direction: column;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-left: 5px solid #007bff;
+            border-radius: 4px;
+            background-color: #f9f9f9;
+        }
+
+        /* Product Name Styling (Two-Line Truncation) */
+        .product-name {
+            font-weight: bold;
+            font-size: 1em;
+            text-align: center;
+
+            /* 1. Define the Height for Two Lines */
+            /* This height must precisely accommodate two lines of text. */
+            height: 2.4em;
+            /* Adjust this value if your browser's default line-height is different */
+
+            /* 2. Enable Truncation and Ellipsis */
+            overflow: hidden;
+            text-overflow: ellipsis;
+            /* This property technically only works for single-line overflow */
+
+            /* 3. The Multi-Line Truncation Hack (Works in most modern browsers: Chrome, Safari, Edge, etc.) */
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            /* This is the property that enforces the 2-line limit */
+            -webkit-box-orient: vertical;
+        }
+
+        /* Barcode Styling (Libre Barcode 39) */
+        .barcode {
+            font-family: "Libre Barcode 39", system-ui;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 30px;
+            color: #000;
+            text-align: center;
+            margin-top: auto;
+            /* Pushes barcode to the bottom of the card */
+            word-break: break-all;
+        }
+
+        /* RESPONSIVENESS: Mobile Stacking */
+        @media (max-width: 450px) {
+            .product-card {
+                /* On small screens, force each card to take up the full width */
+                min-width: 100%;
+                max-width: 100%;
+                flex-basis: 100%;
+            }
+
+            .barcode {
+                font-size: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="product-list" id="product-container">
+    </div>
+
+    <script>
+        // 1. Data Source (Your product information)
+        const products = [
+            { name: "[B] Oliva serie v torpdo", barcode: "814539010504" },
+            { name: "Oliva serie v torpdo", barcode: "814539011440" },
+            { name: "[B] R&J reserve robusto", barcode: "76452353568" },
+            { name: "R&J reserve robusto", barcode: "76452349950" },
+            { name: "[B] RYJ R Real Magnum", barcode: "76452355203" },
+            { name: "RYJ R Real Magnum", barcode: "76452348755" },
+            { name: "[B] Trinidad Espiritu series 3", barcode: "71610529692" },
+            { name: "Trinidad Espiritu series 3", barcode: "71610529748" },
+            { name: "LA Aurora Mad gran toro", barcode: "7465603132474" },
+            { name: "muertos", barcode: "818558012495" },
+            { name: "Sweet jane Dia de los muertos", barcode: "818558012488" },
+            { name: "[B] LAYOVER", barcode: "GC2025101513" },
+            { name: "LAYOVER", barcode: "GC2025101514" },
+            { name: "tobacco", barcode: "4030486902303" },
+            { name: "tobacco", barcode: "4030486902426" },
+            { name: "Tobacco", barcode: "4030486902419" },
+            { name: "Ashton Artisans blend", barcode: "403048696701" },
+            { name: "pipe tobacco", barcode: "4030486902297" },
+            { name: "Ashton ESG", barcode: "819577011995" }
+        ];
+
+        // 2. Rendering Function
+        function renderProductCards() {
+            const container = document.getElementById('product-container');
+
+            const html = products.map(product => {
+                // Libre Barcode 39 requires asterisks (*) for start/stop
+                const barcodeWithMarkers = `*${product.barcode}*`;
+
+                return `
+                <div class="product-card">
+                    <span class="product-name">${product.name}</span>
+                    <span class="barcode">${barcodeWithMarkers}</span>
+                </div>
+            `;
+            }).join('');
+
+            container.innerHTML = html;
+        }
+
+        // 3. Execute the function when the page loads
+        document.addEventListener('DOMContentLoaded', renderProductCards);
+    </script>
+
+</body>
+
 </html>
