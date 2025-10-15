@@ -129,6 +129,10 @@
             { name: "Ashton ESG", barcode: "819577011995" }
         ];
 
+        products.sort((a, b) => {
+            return a.name.localeCompare(b.name);
+        });
+
         // 2. Rendering Function
         function renderProductCards() {
             const container = document.getElementById('product-container');
